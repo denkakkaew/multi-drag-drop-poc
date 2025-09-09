@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm7hxppsdon8e"]
+
+[ext_resource type="Script" uid="uid://bbg822po6iq7h" path="res://scripts/multi_touch.gd" id="1_0ha60"]
+[ext_resource type="Script" uid="uid://op6ljmuk4v8q" path="res://scripts/dropable_bg.gd" id="1_wp4xf"]
+[ext_resource type="Texture2D" uid="uid://cdpmtv16vm7m8" path="res://assets/border1.png" id="6_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://cullscytgrfau" path="res://scene/tree_shot_alt_item_slot.tscn" id="7_of57s"]
+[ext_resource type="PackedScene" uid="uid://cvanppoj85rct" path="res://scene/tree_shot_item_slot.tscn" id="8_b5f6u"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0ha60")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.513406, 0.913945, 0.835908, 1)
+script = ExtResource("1_wp4xf")
+
+[node name="ItemPanel" type="Control" parent="."]
+custom_minimum_size = Vector2(254, 374)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 254.0
+offset_bottom = 374.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ItemPanel"]
+custom_minimum_size = Vector2(254, 374)
+layout_mode = 0
+offset_left = 862.0
+offset_top = 60.0
+offset_right = 1116.0
+offset_bottom = 434.0
+texture = ExtResource("6_4j5ol")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="GridContainer" type="GridContainer" parent="ItemPanel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -153.5
+offset_right = 78.0
+offset_bottom = 153.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TreeShotItemSlot" parent="ItemPanel/NinePatchRect/GridContainer" instance=ExtResource("7_of57s")]
+layout_mode = 2
+
+[node name="TreeShotItemSlot2" parent="ItemPanel/NinePatchRect/GridContainer" instance=ExtResource("8_b5f6u")]
+layout_mode = 2

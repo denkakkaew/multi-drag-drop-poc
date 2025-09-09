@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvanppoj85rct"]
+
+[ext_resource type="Texture2D" uid="uid://de32u8o43xbpw" path="res://assets/border2.png" id="1_xjrxa"]
+[ext_resource type="Texture2D" uid="uid://catawwfs14x7s" path="res://assets/kenney_isometric-roads/png/treeShort.png" id="2_3c0sc"]
+[ext_resource type="Script" uid="uid://b4ljvjbnjkxm4" path="res://scripts/item.gd" id="3_3c0sc"]
+
+[node name="TreeShotItemSlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(144, 144)
+offset_right = 144.0
+offset_bottom = 144.0
+
+[node name="Slot_bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_xjrxa")
+centered = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(34, 72)
+layout_mode = 0
+offset_left = 53.0
+offset_top = 34.0
+offset_right = 87.0
+offset_bottom = 106.0
+texture = ExtResource("2_3c0sc")
+script = ExtResource("3_3c0sc")
+type = 0
